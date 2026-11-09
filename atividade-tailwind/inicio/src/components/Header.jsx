@@ -8,16 +8,23 @@ const links = [
 // EXERCÍCIO 2: barra de navegação
 export default function Header() {
   return (
-    <header>
-      <nav>
-        <a href="#">☕ Grão Dourado</a>
-        <ul>
+    <header className="bg-white p-4">
+      <nav className="flex justify-between items-center">
+
+        <a href="#" className="text-xl font-bold text-amber-700">
+          ☕ Grão Dourado
+        </a>
+
+        <ul className="hidden md:flex gap-4">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href}>{link.texto}</a>
+              <a href={link.href} className="hover:text-amber-700">
+                {link.texto}
+              </a>
             </li>
           ))}
         </ul>
+
       </nav>
     </header>
   )
